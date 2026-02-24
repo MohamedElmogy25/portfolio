@@ -1,0 +1,25 @@
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32mظ£ô[39m 400 modules transformed.
+x Build failed in 1.40s
+error during build:
+src/components/Skills.jsx (5:4): "SiPowerbi" is not exported by "node_modules/react-icons/si/index.mjs", imported by "src/components/Skills.jsx".
+file: C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/src/components/Skills.jsx:5:4
+
+3: import {
+4:     SiTensorflow, SiPytorch, SiScikitlearn, SiPandas, SiPython,
+5:     SiPowerbi, SiTableau, SiMysql
+       ^
+6: } from 'react-icons/si'
+7: import { FiDatabase } from 'react-icons/fi'
+
+    at getRollupError (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at error (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/parseAst.js:398:42)
+    at Module.error (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:17040:16)
+    at Module.traceVariable (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:17452:29)
+    at ModuleScope.findVariable (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:15070:39)
+    at Identifier.bind (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:5447:40)
+    at Property.bind (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)
+    at ObjectExpression.bind (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at ArrayExpression.bind (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at Property.bind (file:///C:/Users/exp3/.gemini/antigravity/scratch/elmogy-portfolio/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)
