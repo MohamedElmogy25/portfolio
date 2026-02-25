@@ -10,7 +10,7 @@ const timelineData = [
         company: 'Delta University for Science and Technology',
         type: 'Education',
         location: 'Mansoura, Egypt',
-        color: '#3b82f6',
+        color: '#38bdf8',
         tags: ['Machine Learning', 'Genomics', 'Neural Networks', 'Statistics'],
         description:
             'Studied at the intersection of computer science and life sciences, building a strong foundation in AI algorithms, biological data analysis, and computational biology. GPA: 2.904 / 4.00.',
@@ -22,7 +22,7 @@ const timelineData = [
         company: 'Research Lab — Delta University',
         type: 'Internship',
         location: 'Mansoura, Egypt',
-        color: '#8b5cf6',
+        color: '#e879f9',
         tags: ['Biopython', 'BLAST', 'FASTA', 'Sequence Analysis'],
         description:
             'Performed biological sequence analysis using BLAST and Biopython, processing FASTA files and conducting comparative genomic studies on pathogen datasets.',
@@ -34,7 +34,7 @@ const timelineData = [
         company: 'Data Analytics Project',
         type: 'Project',
         location: 'Remote, Egypt',
-        color: '#3b82f6',
+        color: '#38bdf8',
         tags: ['Python', 'Pandas', 'NumPy', 'Seaborn', 'Power BI'],
         description:
             'Cleaned and preprocessed supermarket sales data to extract business insights. Created a comprehensive data wrangling report and business insights presentation using Python (Pandas, NumPy, Seaborn).',
@@ -46,7 +46,7 @@ const timelineData = [
         company: 'Digital Egypt Pioneers Initiative (DEPI)',
         type: 'Certification',
         location: 'Online — Egypt',
-        color: '#8b5cf6',
+        color: '#e879f9',
         tags: ['Google Analytics', 'Spreadsheets', 'R', 'Tableau'],
         description:
             'Completed the prestigious DEPI Google Data Analysis Specialization, mastering the full analytics workflow from data cleaning and visualization to stakeholder storytelling.',
@@ -180,7 +180,7 @@ export default function Timeline() {
                     <div className="mt-16 flex justify-center">
                         <div className="glass-card-violet rounded-2xl px-6 py-4 flex items-center gap-4 border-violet-500/20">
                             <div className="w-10 h-10 rounded-full flex items-center justify-center"
-                                style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
+                                style={{ background: 'linear-gradient(135deg, #38bdf8, #e879f9)' }}>
                                 <FiAward size={18} className="text-[#050505]" />
                             </div>
                             <div>

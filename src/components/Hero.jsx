@@ -4,9 +4,9 @@ import { FiGithub, FiLinkedin, FiArrowDown, FiDownload } from 'react-icons/fi'
 import { SiTensorflow, SiPython, SiScikitlearn } from 'react-icons/si'
 
 const floatingBadges = [
-    { icon: SiTensorflow, label: 'TensorFlow', color: '#3b82f6', x: '8%', y: '30%', delay: 0 },
-    { icon: SiPython, label: 'Python', color: '#8b5cf6', x: '88%', y: '25%', delay: 0.5 },
-    { icon: SiScikitlearn, label: 'Scikit-learn', color: '#3b82f6', x: '85%', y: '65%', delay: 1 },
+    { icon: SiTensorflow, label: 'TensorFlow', color: '#38bdf8', x: '8%', y: '30%', delay: 0 },
+    { icon: SiPython, label: 'Python', color: '#e879f9', x: '88%', y: '25%', delay: 0.5 },
+    { icon: SiScikitlearn, label: 'Scikit-learn', color: '#38bdf8', x: '85%', y: '65%', delay: 1 },
 ]
 
 const codeLines = [
@@ -225,7 +225,7 @@ export default function Hero() {
                             style={{ background: 'rgba(5,10,5,0.95)' }}>
                             {/* Title bar */}
                             <div className="flex items-center gap-2 px-4 py-3 border-b border-blue-500/10"
-                                style={{ background: 'rgba(59,130,246,0.04)' }}>
+                                style={{ background: 'rgba(56,189,248,0.04)' }}>
                                 <div className="flex gap-1.5">
                                     {['bg-red-500/70', 'bg-yellow-500/70', 'bg-blue-500/70'].map(c => (
                                         <div key={c} className={`w-3 h-3 rounded-full ${c}`} />

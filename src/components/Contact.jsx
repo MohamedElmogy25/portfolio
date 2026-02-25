@@ -9,7 +9,7 @@ const contactLinks = [
         label: 'GitHub',
         handle: '@MohamedElmogy25',
         href: 'https://github.com/MohamedElmogy25',
-        color: '#3b82f6',
+        color: '#38bdf8',
         desc: 'Source code & projects',
     },
     {
@@ -17,7 +17,7 @@ const contactLinks = [
         label: 'LinkedIn',
         handle: 'in/mooogyyy',
         href: 'https://linkedin.com/in/mooogyyy',
-        color: '#8b5cf6',
+        color: '#e879f9',
         desc: 'Professional network',
     },
     {
@@ -25,7 +25,7 @@ const contactLinks = [
         label: 'Email',
         handle: 'mohammed.elmogy7500@gmail.com',
         href: 'mailto:mohammed.elmogy7500@gmail.com',
-        color: '#3b82f6',
+        color: '#38bdf8',
         desc: 'Direct contact',
     },
     {
@@ -33,7 +33,7 @@ const contactLinks = [
         label: 'Phone',
         handle: '+20 102 783 9779',
         href: 'tel:+201027839779',
-        color: '#8b5cf6',
+        color: '#e879f9',
         desc: 'Call or WhatsApp',
     },
 ]
@@ -46,7 +46,7 @@ export default function Contact() {
     const [status, setStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
     const [errorMsg, setErrorMsg] = useState('')
 
-    const inputClass = "w-full bg-[#0a0a0a] border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_0_3px_rgba(59,130,246,0.08)] transition-all"
+    const inputClass = "w-full bg-[#0a0a0a] border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_0_3px_rgba(56,189,248,0.08)] transition-all"
 
     function handleChange(e) {
         setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -101,7 +101,7 @@ export default function Contact() {
                             Let's Build the Future of{' '}
                             <span
                                 style={{
-                                    background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                                    background: 'linear-gradient(135deg, #38bdf8, #e879f9)',
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
                                 }}
@@ -136,7 +136,7 @@ export default function Contact() {
                                 className="flex flex-col items-center justify-center gap-4 py-12 text-center"
                             >
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center"
-                                    style={{ background: 'rgba(59,130,246,0.12)', border: '1px solid rgba(59,130,246,0.3)' }}>
+                                    style={{ background: 'rgba(56,189,248,0.12)', border: '1px solid rgba(56,189,248,0.3)' }}>
                                     <FiCheck size={28} className="text-blue-400" />
                                 </div>
                                 <div>
@@ -255,7 +255,7 @@ export default function Contact() {
                         </div>
 
                         <div className="rounded-2xl p-5 flex items-center gap-4"
-                            style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)' }}>
+                            style={{ background: 'rgba(56,189,248,0.06)', border: '1px solid rgba(56,189,248,0.15)' }}>
                             <span className="w-3 h-3 rounded-full bg-blue-400 animate-pulse shrink-0" />
                             <div>
                                 <div className="text-blue-300 font-semibold text-sm">Currently Available</div>
@@ -270,7 +270,7 @@ export default function Contact() {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-slate-700 text-xs">
                         <div className="flex items-center gap-2">
                             <div className="w-6 h-6 rounded-md flex items-center justify-center"
-                                style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
+                                style={{ background: 'linear-gradient(135deg, #38bdf8, #e879f9)' }}>
                                 <span className="text-[#050505] font-bold text-[10px]">M</span>
                             </div>
                             <span>Mohamed Elmogy</span>
