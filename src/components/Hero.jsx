@@ -4,9 +4,9 @@ import { FiGithub, FiLinkedin, FiArrowDown, FiDownload } from 'react-icons/fi'
 import { SiTensorflow, SiPython, SiScikitlearn } from 'react-icons/si'
 
 const floatingBadges = [
-    { icon: SiTensorflow, label: 'TensorFlow', color: '#10b981', x: '8%', y: '30%', delay: 0 },
-    { icon: SiPython, label: 'Python', color: '#06b6d4', x: '88%', y: '25%', delay: 0.5 },
-    { icon: SiScikitlearn, label: 'Scikit-learn', color: '#10b981', x: '85%', y: '65%', delay: 1 },
+    { icon: SiTensorflow, label: 'TensorFlow', color: '#3b82f6', x: '8%', y: '30%', delay: 0 },
+    { icon: SiPython, label: 'Python', color: '#8b5cf6', x: '88%', y: '25%', delay: 0.5 },
+    { icon: SiScikitlearn, label: 'Scikit-learn', color: '#3b82f6', x: '85%', y: '65%', delay: 1 },
 ]
 
 const codeLines = [
@@ -49,7 +49,7 @@ function Typewriter() {
 
     return (
         <span className="text-lg text-slate-400 font-light flex items-center gap-1 mb-3">
-            <span className="text-emerald-400 font-semibold">{displayed}</span>
+            <span className="text-blue-400 font-semibold">{displayed}</span>
             <span className="typewriter-cursor" />
         </span>
     )
@@ -84,8 +84,8 @@ export default function Hero() {
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
             {/* Background */}
             <div className="absolute inset-0 grid-dot-bg opacity-40" />
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-emerald-500/5 blur-3xl animate-pulse-slow" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-cyan-500/5 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl animate-pulse-slow" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-violet-500/5 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
 
             {/* Floating badges */}
             {floatingBadges.map((badge, i) => (
@@ -116,10 +116,10 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 mb-6"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-500/5 mb-6"
                         >
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                            <span className="text-emerald-400 text-xs font-medium tracking-widest uppercase">
+                            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                            <span className="text-blue-400 text-xs font-medium tracking-widest uppercase">
                                 Available for opportunities
                             </span>
                         </motion.div>
@@ -154,7 +154,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="text-sm font-mono text-emerald-500/70 mb-8 tracking-wider"
+                            className="text-sm font-mono text-blue-500/70 mb-8 tracking-wider"
                         >
                             • Medical AI &nbsp;|&nbsp; • Bioinformatics &nbsp;|&nbsp; • Healthcare Intelligence
                         </motion.p>
@@ -195,8 +195,8 @@ export default function Hero() {
                             className="flex items-center gap-4"
                         >
                             {[
-                                { href: 'https://github.com/MohamedElmogy25', icon: FiGithub, hoverColor: 'hover:text-emerald-400', hoverBorder: 'hover:border-emerald-500/40', hoverBg: 'hover:bg-emerald-500/5' },
-                                { href: 'https://linkedin.com/in/mooogyyy', icon: FiLinkedin, hoverColor: 'hover:text-cyan-400', hoverBorder: 'hover:border-cyan-500/40', hoverBg: 'hover:bg-cyan-500/5' },
+                                { href: 'https://github.com/MohamedElmogy25', icon: FiGithub, hoverColor: 'hover:text-blue-400', hoverBorder: 'hover:border-blue-500/40', hoverBg: 'hover:bg-blue-500/5' },
+                                { href: 'https://linkedin.com/in/mooogyyy', icon: FiLinkedin, hoverColor: 'hover:text-violet-400', hoverBorder: 'hover:border-violet-500/40', hoverBg: 'hover:bg-violet-500/5' },
                             ].map(({ href, icon: Icon, hoverColor, hoverBorder, hoverBg }) => (
                                 <motion.a
                                     key={href}
@@ -221,20 +221,20 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="hidden lg:block"
                     >
-                        <div className="rounded-2xl overflow-hidden border border-emerald-500/15"
+                        <div className="rounded-2xl overflow-hidden border border-blue-500/15"
                             style={{ background: 'rgba(5,10,5,0.95)' }}>
                             {/* Title bar */}
-                            <div className="flex items-center gap-2 px-4 py-3 border-b border-emerald-500/10"
-                                style={{ background: 'rgba(16,185,129,0.04)' }}>
+                            <div className="flex items-center gap-2 px-4 py-3 border-b border-blue-500/10"
+                                style={{ background: 'rgba(59,130,246,0.04)' }}>
                                 <div className="flex gap-1.5">
-                                    {['bg-red-500/70', 'bg-yellow-500/70', 'bg-emerald-500/70'].map(c => (
+                                    {['bg-red-500/70', 'bg-yellow-500/70', 'bg-blue-500/70'].map(c => (
                                         <div key={c} className={`w-3 h-3 rounded-full ${c}`} />
                                     ))}
                                 </div>
                                 <span className="text-slate-500 text-xs font-mono ml-2">diagnolink_demo.py</span>
                                 <div className="ml-auto flex items-center gap-1">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span className="text-emerald-600 text-[10px] font-mono">running</span>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                                    <span className="text-blue-600 text-[10px] font-mono">running</span>
                                 </div>
                             </div>
                             {/* Code */}
@@ -246,7 +246,7 @@ export default function Hero() {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.8 + i * 0.25, duration: 0.4 }}
                                         className={line.startsWith('>>>') ? 'text-slate-300' :
-                                            i === codeLines.length - 1 ? 'text-emerald-400 font-semibold' : 'text-cyan-400'}
+                                            i === codeLines.length - 1 ? 'text-blue-400 font-semibold' : 'text-violet-400'}
                                     >
                                         {line}
                                     </motion.div>
@@ -255,7 +255,7 @@ export default function Hero() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: [0, 1, 0] }}
                                     transition={{ delay: 2.2, duration: 1, repeat: Infinity }}
-                                    className="inline-block w-2 h-4 bg-emerald-400"
+                                    className="inline-block w-2 h-4 bg-blue-400"
                                 />
                             </div>
                         </div>
@@ -272,7 +272,7 @@ export default function Hero() {
                                     className="glass-card rounded-xl p-3 text-center border-animated"
                                     whileHover={{ scale: 1.05 }}
                                 >
-                                    <div className="text-xl font-bold text-emerald-400">
+                                    <div className="text-xl font-bold text-blue-400">
                                         <Counter target={stat.target} suffix={stat.suffix} />
                                     </div>
                                     <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
@@ -294,7 +294,7 @@ export default function Hero() {
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
-                    className="w-px h-8 bg-gradient-to-b from-emerald-500/50 to-transparent"
+                    className="w-px h-8 bg-gradient-to-b from-blue-500/50 to-transparent"
                 />
             </motion.div>
         </section>

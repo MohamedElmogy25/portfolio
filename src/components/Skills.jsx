@@ -11,9 +11,9 @@ const skillCategories = [
     {
         id: 'aiml',
         label: 'AI / ML',
-        gradient: 'from-emerald-500/20 to-emerald-500/5',
-        border: 'border-emerald-500/20',
-        accentColor: '#10b981',
+        gradient: 'from-blue-500/20 to-blue-500/5',
+        border: 'border-blue-500/20',
+        accentColor: '#3b82f6',
         icon: '🧠',
         skills: [
             { name: 'TensorFlow', icon: SiTensorflow, level: 90, color: '#FF6F00' },
@@ -25,9 +25,9 @@ const skillCategories = [
     {
         id: 'data',
         label: 'Data',
-        gradient: 'from-cyan-500/20 to-cyan-500/5',
-        border: 'border-cyan-500/20',
-        accentColor: '#06b6d4',
+        gradient: 'from-violet-500/20 to-violet-500/5',
+        border: 'border-violet-500/20',
+        accentColor: '#8b5cf6',
         icon: '📊',
         skills: [
             { name: 'SQL', icon: SiMysql, level: 85, color: '#4479A1' },
@@ -39,15 +39,15 @@ const skillCategories = [
     {
         id: 'bio',
         label: 'Bioinformatics',
-        gradient: 'from-emerald-500/15 to-cyan-500/10',
-        border: 'border-emerald-500/15',
-        accentColor: '#10b981',
+        gradient: 'from-blue-500/15 to-violet-500/10',
+        border: 'border-blue-500/15',
+        accentColor: '#3b82f6',
         icon: '🧬',
         skills: [
-            { name: 'Biopython', icon: FiDatabase, level: 82, color: '#10b981' },
-            { name: 'BLAST', icon: FiDatabase, level: 78, color: '#06b6d4' },
-            { name: 'FASTA', icon: FiDatabase, level: 80, color: '#10b981' },
-            { name: 'OpenCV', icon: FiDatabase, level: 85, color: '#06b6d4' },
+            { name: 'Biopython', icon: FiDatabase, level: 82, color: '#3b82f6' },
+            { name: 'BLAST', icon: FiDatabase, level: 78, color: '#8b5cf6' },
+            { name: 'FASTA', icon: FiDatabase, level: 80, color: '#3b82f6' },
+            { name: 'OpenCV', icon: FiDatabase, level: 85, color: '#8b5cf6' },
         ],
     },
 ]
@@ -81,16 +81,16 @@ function SkillBar({ name, icon: Icon, level, color, accentColor, delay }) {
 export default function Skills() {
     return (
         <section id="skills" className="py-28 relative">
-            <div className="absolute -right-40 top-1/3 w-80 h-80 rounded-full bg-cyan-500/5 blur-3xl" />
+            <div className="absolute -right-40 top-1/3 w-80 h-80 rounded-full bg-violet-500/5 blur-3xl" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeIn>
                     <div className="flex items-center gap-4 mb-4">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/20" />
-                        <span className="text-xs text-cyan-500 font-mono tracking-widest uppercase">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-violet-500/20" />
+                        <span className="text-xs text-violet-500 font-mono tracking-widest uppercase">
                             002 / Skills
                         </span>
-                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/20" />
+                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-violet-500/20" />
                     </div>
                 </FadeIn>
 
@@ -148,7 +148,7 @@ export default function Skills() {
                         <div className="flex flex-wrap justify-center gap-3">
                             {['Jupyter Notebook', 'Google Colab', 'Kaggle Notebooks', 'Git', 'GitHub', 'NumPy', 'Matplotlib', 'Seaborn', 'FastAPI', 'NCBI Databases'].map(tool => (
                                 <span key={tool}
-                                    className="px-3 py-1 rounded-full border border-slate-800 text-xs text-slate-500 hover:text-emerald-400 hover:border-emerald-500/30 transition-all duration-200 cursor-default">
+                                    className="px-3 py-1 rounded-full border border-slate-800 text-xs text-slate-500 hover:text-blue-400 hover:border-blue-500/30 transition-all duration-200 cursor-default">
                                     {tool}
                                 </span>
                             ))}
@@ -158,9 +158,9 @@ export default function Skills() {
 
                 {/* Soft Skills */}
                 <FadeIn delay={0.4}>
-                    <div className="mt-6 rounded-2xl p-6 border border-cyan-500/12"
-                        style={{ background: 'rgba(6,182,212,0.04)' }}>
-                        <p className="text-xs text-cyan-500 font-mono mb-4 tracking-widest uppercase">Soft Skills</p>
+                    <div className="mt-6 rounded-2xl p-6 border border-violet-500/12"
+                        style={{ background: 'rgba(139,92,246,0.04)' }}>
+                        <p className="text-xs text-violet-500 font-mono mb-4 tracking-widest uppercase">Soft Skills</p>
                         <div className="flex flex-wrap gap-2">
                             {[
                                 { label: 'Analytical & Problem-Solving', emoji: '🧠' },
@@ -171,7 +171,7 @@ export default function Skills() {
                                 { label: 'Time Management', emoji: '⏰' },
                             ].map(({ label, emoji }) => (
                                 <span key={label}
-                                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-xs text-cyan-300 hover:bg-cyan-500/10 transition-all duration-200 cursor-default">
+                                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-violet-500/20 bg-violet-500/5 text-xs text-violet-300 hover:bg-violet-500/10 transition-all duration-200 cursor-default">
                                     <span>{emoji}</span>
                                     {label}
                                 </span>
@@ -183,7 +183,7 @@ export default function Skills() {
                 {/* Certifications */}
                 <FadeIn delay={0.5}>
                     <div className="mt-6 glass-card rounded-2xl p-6">
-                        <p className="text-xs text-emerald-500 font-mono mb-5 tracking-widest uppercase">Certificates & Courses</p>
+                        <p className="text-xs text-blue-500 font-mono mb-5 tracking-widest uppercase">Certificates & Courses</p>
                         <div className="grid sm:grid-cols-2 gap-3">
                             {[
                                 { title: 'Fake News Detection with Machine Learning', icon: '🤖' },
@@ -196,7 +196,7 @@ export default function Skills() {
                                 { title: 'Numerical Methods for Engineers', icon: '🔢' },
                             ].map(({ title, icon }) => (
                                 <div key={title}
-                                    className="flex items-start gap-3 p-3 rounded-xl border border-emerald-500/10 bg-emerald-500/4 hover:border-emerald-500/20 transition-all duration-200">
+                                    className="flex items-start gap-3 p-3 rounded-xl border border-blue-500/10 bg-blue-500/4 hover:border-blue-500/20 transition-all duration-200">
                                     <span className="text-base shrink-0 mt-0.5">{icon}</span>
                                     <span className="text-slate-400 text-xs leading-relaxed">{title}</span>
                                 </div>

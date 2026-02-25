@@ -23,8 +23,8 @@ const projects = [
         ],
         techDetail: ['CNN Architecture', 'Transfer Learning', 'Image Preprocessing', 'Data Augmentation'],
         github: 'https://github.com/MohamedElmogy25',
-        accent: '#10b981',
-        glowColor: 'rgba(16,185,129,0.15)',
+        accent: '#3b82f6',
+        glowColor: 'rgba(59,130,246,0.15)',
     },
     {
         id: 'supermarket',
@@ -40,8 +40,8 @@ const projects = [
         ],
         techDetail: ['Data Wrangling', 'EDA', 'Dashboard Design', 'Business Intelligence'],
         github: 'https://github.com/MohamedElmogy25',
-        accent: '#06b6d4',
-        glowColor: 'rgba(6,182,212,0.15)',
+        accent: '#8b5cf6',
+        glowColor: 'rgba(139,92,246,0.15)',
     },
 ]
 
@@ -51,16 +51,16 @@ export default function Projects() {
 
     return (
         <section id="projects" className="py-28 relative">
-            <div className="absolute -right-40 bottom-1/3 w-80 h-80 rounded-full bg-emerald-500/5 blur-3xl" />
+            <div className="absolute -right-40 bottom-1/3 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeIn>
                     <div className="flex items-center gap-4 mb-4">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-emerald-500/20" />
-                        <span className="text-xs text-emerald-500 font-mono tracking-widest uppercase">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-blue-500/20" />
+                        <span className="text-xs text-blue-500 font-mono tracking-widest uppercase">
                             004 / Projects
                         </span>
-                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-emerald-500/20" />
+                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-blue-500/20" />
                     </div>
                 </FadeIn>
 
@@ -82,26 +82,26 @@ export default function Projects() {
                         transition={{ duration: 0.7 }}
                         className="lg:col-span-2 rounded-2xl overflow-hidden border relative group"
                         style={{
-                            borderColor: 'rgba(16,185,129,0.2)',
+                            borderColor: 'rgba(59,130,246,0.2)',
                             background: 'rgba(5,10,5,0.95)',
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(16,185,129,0.4)'
-                            e.currentTarget.style.boxShadow = '0 0 40px rgba(16,185,129,0.12)'
+                            e.currentTarget.style.borderColor = 'rgba(59,130,246,0.4)'
+                            e.currentTarget.style.boxShadow = '0 0 40px rgba(59,130,246,0.12)'
                         }}
                         onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(16,185,129,0.2)'
+                            e.currentTarget.style.borderColor = 'rgba(59,130,246,0.2)'
                             e.currentTarget.style.boxShadow = ''
                         }}
                     >
                         {/* Top accent bar */}
                         <div className="h-1 w-full"
-                            style={{ background: 'linear-gradient(90deg, #10b981, #06b6d4)' }} />
+                            style={{ background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)' }} />
 
                         {/* Featured badge */}
                         <div className="absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
-                            style={{ background: 'rgba(16,185,129,0.12)', color: '#10b981', border: '1px solid rgba(16,185,129,0.25)' }}>
-                            <FiStar size={10} fill="#10b981" />
+                            style={{ background: 'rgba(59,130,246,0.12)', color: '#3b82f6', border: '1px solid rgba(59,130,246,0.25)' }}>
+                            <FiStar size={10} fill="#3b82f6" />
                             Featured Project
                         </div>
 
@@ -109,18 +109,18 @@ export default function Projects() {
                             {/* Project header */}
                             <div className="flex items-start gap-4 mb-5">
                                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shrink-0"
-                                    style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                                    style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)' }}>
                                     🫁
                                 </div>
                                 <div>
                                     <h3 className="text-white font-black text-2xl">DiagnoLink</h3>
-                                    <p className="text-emerald-400 text-sm font-medium mt-0.5">AI-Powered Chest Disease Diagnosis</p>
+                                    <p className="text-blue-400 text-sm font-medium mt-0.5">AI-Powered Chest Disease Diagnosis</p>
                                 </div>
                             </div>
 
                             <p className="text-slate-400 text-sm leading-relaxed mb-6">
                                 An end-to-end medical AI system using TensorFlow and OpenCV for automated chest X-ray analysis.
-                                Trained on the NIH ChestX-ray14 dataset to detect <strong className="text-emerald-300">14 thoracic pathologies</strong> with
+                                Trained on the NIH ChestX-ray14 dataset to detect <strong className="text-blue-300">14 thoracic pathologies</strong> with
                                 clinical-grade accuracy. Leverages transfer learning and custom CNN architectures for robust diagnosis support.
                             </p>
 
@@ -133,9 +133,9 @@ export default function Projects() {
                                 ].map((m) => (
                                     <div key={m.label}
                                         className="rounded-xl p-3 text-center"
-                                        style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.1)' }}>
+                                        style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.1)' }}>
                                         <div className="text-lg mb-1">{m.icon}</div>
-                                        <div className="text-emerald-400 font-bold text-base">{m.value}</div>
+                                        <div className="text-blue-400 font-bold text-base">{m.value}</div>
                                         <div className="text-slate-600 text-xs mt-0.5">{m.label}</div>
                                     </div>
                                 ))}
@@ -146,7 +146,7 @@ export default function Projects() {
                                 {['TensorFlow', 'OpenCV', 'Python', 'CNN', 'Transfer Learning', 'NumPy', 'Matplotlib'].map((tag) => (
                                     <span key={tag}
                                         className="px-2.5 py-1 rounded-lg text-xs font-medium"
-                                        style={{ background: 'rgba(16,185,129,0.08)', color: '#86efac', border: '1px solid rgba(16,185,129,0.12)' }}>
+                                        style={{ background: 'rgba(59,130,246,0.08)', color: '#86efac', border: '1px solid rgba(59,130,246,0.12)' }}>
                                         {tag}
                                     </span>
                                 ))}
@@ -154,11 +154,11 @@ export default function Projects() {
 
                             {/* Pipeline */}
                             <div className="rounded-xl p-4 font-mono text-xs mb-6"
-                                style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(16,185,129,0.08)' }}>
+                                style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(59,130,246,0.08)' }}>
                                 <div className="text-slate-600 mb-2"># Model Pipeline</div>
-                                <div className="text-slate-400">Input X-Ray &nbsp;<span className="text-emerald-500">→</span>&nbsp; Preprocessing &nbsp;<span className="text-emerald-500">→</span>&nbsp; CNN</div>
-                                <div className="text-slate-400 mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-cyan-500">→</span>&nbsp; Multi-label Classification</div>
-                                <div className="text-emerald-400 mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-cyan-500">→</span>&nbsp; Disease Report</div>
+                                <div className="text-slate-400">Input X-Ray &nbsp;<span className="text-blue-500">→</span>&nbsp; Preprocessing &nbsp;<span className="text-blue-500">→</span>&nbsp; CNN</div>
+                                <div className="text-slate-400 mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-violet-500">→</span>&nbsp; Multi-label Classification</div>
+                                <div className="text-blue-400 mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-violet-500">→</span>&nbsp; Disease Report</div>
                             </div>
 
                             {/* Actions */}
@@ -184,29 +184,29 @@ export default function Projects() {
                         transition={{ duration: 0.7, delay: 0.15 }}
                         className="rounded-2xl overflow-hidden border relative group flex flex-col"
                         style={{
-                            borderColor: 'rgba(6,182,212,0.15)',
+                            borderColor: 'rgba(139,92,246,0.15)',
                             background: 'rgba(5,8,10,0.95)',
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(6,182,212,0.35)'
-                            e.currentTarget.style.boxShadow = '0 0 30px rgba(6,182,212,0.10)'
+                            e.currentTarget.style.borderColor = 'rgba(139,92,246,0.35)'
+                            e.currentTarget.style.boxShadow = '0 0 30px rgba(139,92,246,0.10)'
                         }}
                         onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(6,182,212,0.15)'
+                            e.currentTarget.style.borderColor = 'rgba(139,92,246,0.15)'
                             e.currentTarget.style.boxShadow = ''
                         }}
                     >
                         <div className="h-1 w-full"
-                            style={{ background: 'linear-gradient(90deg, #06b6d4, #10b981)' }} />
+                            style={{ background: 'linear-gradient(90deg, #8b5cf6, #3b82f6)' }} />
 
                         <div className="p-6 flex flex-col flex-1">
                             <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-4 shrink-0"
-                                style={{ background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.2)' }}>
+                                style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)' }}>
                                 📈
                             </div>
 
                             <h3 className="text-white font-bold text-lg mb-1">Supermarket Sales Analysis</h3>
-                            <p className="text-cyan-400 text-xs font-medium mb-3">Data Wrangling & Business Intelligence · Jan–Mar 2025</p>
+                            <p className="text-violet-400 text-xs font-medium mb-3">Data Wrangling & Business Intelligence · Jan–Mar 2025</p>
 
                             <p className="text-slate-500 text-sm leading-relaxed mb-5 flex-1">
                                 Cleaned and preprocessed supermarket sales data to extract actionable business insights.
@@ -217,7 +217,7 @@ export default function Projects() {
                             <div className="space-y-2 mb-5">
                                 {['Data Wrangling & Cleaning', 'Exploratory Data Analysis', 'Power BI Dashboards', 'Business Insights Report'].map((feat) => (
                                     <div key={feat} className="flex items-center gap-2 text-xs text-slate-400">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-400/70 shrink-0" />
+                                        <div className="w-1.5 h-1.5 rounded-full bg-violet-400/70 shrink-0" />
                                         {feat}
                                     </div>
                                 ))}
@@ -227,14 +227,14 @@ export default function Projects() {
                                 {['Python', 'Pandas', 'Power BI', 'SQL', 'Tableau'].map((t) => (
                                     <span key={t}
                                         className="px-2 py-0.5 rounded-md text-xs"
-                                        style={{ background: 'rgba(6,182,212,0.08)', color: '#67e8f9', border: '1px solid rgba(6,182,212,0.1)' }}>
+                                        style={{ background: 'rgba(139,92,246,0.08)', color: '#67e8f9', border: '1px solid rgba(139,92,246,0.1)' }}>
                                         {t}
                                     </span>
                                 ))}
                             </div>
 
                             <a href="https://github.com/MohamedElmogy25" target="_blank" rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-xs text-cyan-400 hover:text-cyan-300 border border-cyan-500/20 hover:border-cyan-500/40 px-3 py-2 rounded-lg transition-all">
+                                className="flex items-center gap-2 text-xs text-violet-400 hover:text-violet-300 border border-violet-500/20 hover:border-violet-500/40 px-3 py-2 rounded-lg transition-all">
                                 <FiGithub size={13} />
                                 View Repository
                             </a>
@@ -243,9 +243,9 @@ export default function Projects() {
 
                     {/* Small stat cards row */}
                     {[
-                        { label: 'Medical AI Focus', value: '100%', icon: '🩺', accent: '#10b981', desc: 'Healthcare impact driven' },
-                        { label: 'Open Source', value: 'GitHub', icon: '⚙️', accent: '#06b6d4', desc: 'All projects public' },
-                        { label: 'More Coming', value: '2025', icon: '🚀', accent: '#10b981', desc: 'Actively building' },
+                        { label: 'Medical AI Focus', value: '100%', icon: '🩺', accent: '#3b82f6', desc: 'Healthcare impact driven' },
+                        { label: 'Open Source', value: 'GitHub', icon: '⚙️', accent: '#8b5cf6', desc: 'All projects public' },
+                        { label: 'More Coming', value: '2025', icon: '🚀', accent: '#3b82f6', desc: 'Actively building' },
                     ].map((card, i) => (
                         <motion.div
                             key={card.label}

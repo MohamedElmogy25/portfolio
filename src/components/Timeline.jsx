@@ -10,7 +10,7 @@ const timelineData = [
         company: 'Delta University for Science and Technology',
         type: 'Education',
         location: 'Mansoura, Egypt',
-        color: '#10b981',
+        color: '#3b82f6',
         tags: ['Machine Learning', 'Genomics', 'Neural Networks', 'Statistics'],
         description:
             'Studied at the intersection of computer science and life sciences, building a strong foundation in AI algorithms, biological data analysis, and computational biology. GPA: 2.904 / 4.00.',
@@ -22,7 +22,7 @@ const timelineData = [
         company: 'Research Lab — Delta University',
         type: 'Internship',
         location: 'Mansoura, Egypt',
-        color: '#06b6d4',
+        color: '#8b5cf6',
         tags: ['Biopython', 'BLAST', 'FASTA', 'Sequence Analysis'],
         description:
             'Performed biological sequence analysis using BLAST and Biopython, processing FASTA files and conducting comparative genomic studies on pathogen datasets.',
@@ -34,7 +34,7 @@ const timelineData = [
         company: 'Data Analytics Project',
         type: 'Project',
         location: 'Remote, Egypt',
-        color: '#10b981',
+        color: '#3b82f6',
         tags: ['Python', 'Pandas', 'NumPy', 'Seaborn', 'Power BI'],
         description:
             'Cleaned and preprocessed supermarket sales data to extract business insights. Created a comprehensive data wrangling report and business insights presentation using Python (Pandas, NumPy, Seaborn).',
@@ -46,7 +46,7 @@ const timelineData = [
         company: 'Digital Egypt Pioneers Initiative (DEPI)',
         type: 'Certification',
         location: 'Online — Egypt',
-        color: '#06b6d4',
+        color: '#8b5cf6',
         tags: ['Google Analytics', 'Spreadsheets', 'R', 'Tableau'],
         description:
             'Completed the prestigious DEPI Google Data Analysis Specialization, mastering the full analytics workflow from data cleaning and visualization to stakeholder storytelling.',
@@ -145,18 +145,18 @@ function TimelineItem({ item, index }) {
 export default function Timeline() {
     return (
         <section id="experience" className="py-28 relative">
-            <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-emerald-500/15 to-transparent -translate-x-1/2 hidden md:block" />
+            <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-500/15 to-transparent -translate-x-1/2 hidden md:block" />
 
-            <div className="absolute -left-40 bottom-1/4 w-80 h-80 rounded-full bg-emerald-500/4 blur-3xl" />
+            <div className="absolute -left-40 bottom-1/4 w-80 h-80 rounded-full bg-blue-500/4 blur-3xl" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeIn>
                     <div className="flex items-center gap-4 mb-4">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-emerald-500/20" />
-                        <span className="text-xs text-emerald-500 font-mono tracking-widest uppercase">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-blue-500/20" />
+                        <span className="text-xs text-blue-500 font-mono tracking-widest uppercase">
                             003 / Experience
                         </span>
-                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-emerald-500/20" />
+                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-blue-500/20" />
                     </div>
                 </FadeIn>
 
@@ -178,9 +178,9 @@ export default function Timeline() {
                 {/* DEPI badge */}
                 <FadeIn delay={0.4}>
                     <div className="mt-16 flex justify-center">
-                        <div className="glass-card-cyan rounded-2xl px-6 py-4 flex items-center gap-4 border-cyan-500/20">
+                        <div className="glass-card-violet rounded-2xl px-6 py-4 flex items-center gap-4 border-violet-500/20">
                             <div className="w-10 h-10 rounded-full flex items-center justify-center"
-                                style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}>
+                                style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
                                 <FiAward size={18} className="text-[#050505]" />
                             </div>
                             <div>

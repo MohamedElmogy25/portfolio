@@ -9,7 +9,7 @@ const contactLinks = [
         label: 'GitHub',
         handle: '@MohamedElmogy25',
         href: 'https://github.com/MohamedElmogy25',
-        color: '#10b981',
+        color: '#3b82f6',
         desc: 'Source code & projects',
     },
     {
@@ -17,7 +17,7 @@ const contactLinks = [
         label: 'LinkedIn',
         handle: 'in/mooogyyy',
         href: 'https://linkedin.com/in/mooogyyy',
-        color: '#06b6d4',
+        color: '#8b5cf6',
         desc: 'Professional network',
     },
     {
@@ -25,7 +25,7 @@ const contactLinks = [
         label: 'Email',
         handle: 'mohammed.elmogy7500@gmail.com',
         href: 'mailto:mohammed.elmogy7500@gmail.com',
-        color: '#10b981',
+        color: '#3b82f6',
         desc: 'Direct contact',
     },
     {
@@ -33,7 +33,7 @@ const contactLinks = [
         label: 'Phone',
         handle: '+20 102 783 9779',
         href: 'tel:+201027839779',
-        color: '#06b6d4',
+        color: '#8b5cf6',
         desc: 'Call or WhatsApp',
     },
 ]
@@ -46,7 +46,7 @@ export default function Contact() {
     const [status, setStatus] = useState('idle') // 'idle' | 'loading' | 'success' | 'error'
     const [errorMsg, setErrorMsg] = useState('')
 
-    const inputClass = "w-full bg-[#0a0a0a] border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-emerald-500/50 focus:shadow-[0_0_0_3px_rgba(16,185,129,0.08)] transition-all"
+    const inputClass = "w-full bg-[#0a0a0a] border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-300 placeholder-slate-700 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_0_3px_rgba(59,130,246,0.08)] transition-all"
 
     function handleChange(e) {
         setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -80,17 +80,17 @@ export default function Contact() {
     return (
         <section id="contact" className="py-28 relative overflow-hidden">
             {/* Ambient glows */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-40 rounded-full bg-emerald-500/5 blur-3xl" />
-            <div className="absolute top-1/4 right-0 w-60 h-60 rounded-full bg-cyan-500/5 blur-3xl" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-40 rounded-full bg-blue-500/5 blur-3xl" />
+            <div className="absolute top-1/4 right-0 w-60 h-60 rounded-full bg-violet-500/5 blur-3xl" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeIn>
                     <div className="flex items-center gap-4 mb-4">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/20" />
-                        <span className="text-xs text-cyan-500 font-mono tracking-widest uppercase">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-violet-500/20" />
+                        <span className="text-xs text-violet-500 font-mono tracking-widest uppercase">
                             005 / Contact
                         </span>
-                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/20" />
+                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-violet-500/20" />
                     </div>
                 </FadeIn>
 
@@ -101,7 +101,7 @@ export default function Contact() {
                             Let's Build the Future of{' '}
                             <span
                                 style={{
-                                    background: 'linear-gradient(135deg, #10b981, #06b6d4)',
+                                    background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
                                 }}
@@ -125,7 +125,7 @@ export default function Contact() {
                         className="glass-card rounded-2xl p-7"
                     >
                         <h3 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-                            <FiSend size={16} className="text-emerald-400" />
+                            <FiSend size={16} className="text-blue-400" />
                             Send a Message
                         </h3>
 
@@ -136,15 +136,15 @@ export default function Contact() {
                                 className="flex flex-col items-center justify-center gap-4 py-12 text-center"
                             >
                                 <div className="w-16 h-16 rounded-full flex items-center justify-center"
-                                    style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.3)' }}>
-                                    <FiCheck size={28} className="text-emerald-400" />
+                                    style={{ background: 'rgba(59,130,246,0.12)', border: '1px solid rgba(59,130,246,0.3)' }}>
+                                    <FiCheck size={28} className="text-blue-400" />
                                 </div>
                                 <div>
                                     <div className="text-white font-bold text-lg mb-1">Message Sent!</div>
                                     <div className="text-slate-500 text-sm">Thanks for reaching out. I'll get back to you soon.</div>
                                 </div>
                                 <button onClick={() => setStatus('idle')}
-                                    className="text-xs text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-lg hover:bg-emerald-500/5 transition-all">
+                                    className="text-xs text-blue-400 border border-blue-500/20 px-4 py-2 rounded-lg hover:bg-blue-500/5 transition-all">
                                     Send another
                                 </button>
                             </motion.div>
@@ -239,7 +239,7 @@ export default function Contact() {
                                     <div className="font-mono text-xs mt-0.5" style={{ color: link.color }}>{link.handle}</div>
                                     <div className="text-slate-600 text-xs mt-0.5">{link.desc}</div>
                                 </div>
-                                <div className="text-slate-700 group-hover:text-emerald-400 transition-colors">
+                                <div className="text-slate-700 group-hover:text-blue-400 transition-colors">
                                     <FiMapPin size={14} className="rotate-45" />
                                 </div>
                             </motion.a>
@@ -255,10 +255,10 @@ export default function Contact() {
                         </div>
 
                         <div className="rounded-2xl p-5 flex items-center gap-4"
-                            style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.15)' }}>
-                            <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                            style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)' }}>
+                            <span className="w-3 h-3 rounded-full bg-blue-400 animate-pulse shrink-0" />
                             <div>
-                                <div className="text-emerald-300 font-semibold text-sm">Currently Available</div>
+                                <div className="text-blue-300 font-semibold text-sm">Currently Available</div>
                                 <div className="text-slate-500 text-xs mt-0.5">Actively looking for Medical AI & Data roles</div>
                             </div>
                         </div>
@@ -270,7 +270,7 @@ export default function Contact() {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-slate-700 text-xs">
                         <div className="flex items-center gap-2">
                             <div className="w-6 h-6 rounded-md flex items-center justify-center"
-                                style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}>
+                                style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
                                 <span className="text-[#050505] font-bold text-[10px]">M</span>
                             </div>
                             <span>Mohamed Elmogy</span>
@@ -279,9 +279,9 @@ export default function Contact() {
                         </div>
                         <div className="flex items-center gap-4">
                             <a href="https://github.com/MohamedElmogy25" target="_blank" rel="noopener noreferrer"
-                                className="hover:text-emerald-400 transition-colors">GitHub</a>
+                                className="hover:text-blue-400 transition-colors">GitHub</a>
                             <a href="https://linkedin.com/in/mooogyyy" target="_blank" rel="noopener noreferrer"
-                                className="hover:text-cyan-400 transition-colors">LinkedIn</a>
+                                className="hover:text-violet-400 transition-colors">LinkedIn</a>
                             <span>© 2025 Mohamed Elmogy</span>
                         </div>
                     </div>

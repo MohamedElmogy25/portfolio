@@ -4,10 +4,10 @@ import { useRef } from 'react'
 import { FiZap, FiHeart, FiDatabase, FiCode } from 'react-icons/fi'
 
 const traits = [
-    { icon: FiHeart, label: 'Medical AI Passion', color: '#10b981' },
-    { icon: FiDatabase, label: 'Data Analyst', color: '#06b6d4' },
-    { icon: FiCode, label: 'ML Engineer', color: '#10b981' },
-    { icon: FiZap, label: 'Bioinformatics', color: '#06b6d4' },
+    { icon: FiHeart, label: 'Medical AI Passion', color: '#3b82f6' },
+    { icon: FiDatabase, label: 'Data Analyst', color: '#8b5cf6' },
+    { icon: FiCode, label: 'ML Engineer', color: '#3b82f6' },
+    { icon: FiZap, label: 'Bioinformatics', color: '#8b5cf6' },
 ]
 
 const highlights = [
@@ -15,19 +15,19 @@ const highlights = [
         number: '01',
         title: 'AI-Powered Diagnosis',
         desc: 'Built DiagnoLink, a TensorFlow-based system achieving 94%+ accuracy on chest X-ray disease detection using the NIH ChestX-ray14 dataset.',
-        color: '#10b981',
+        color: '#3b82f6',
     },
     {
         number: '02',
         title: 'Google Data Analytics',
         desc: 'Completed the Google Data Analysis Specialization through the Digital Egypt Pioneers Initiative (DEPI), mastering end-to-end analytics workflows.',
-        color: '#06b6d4',
+        color: '#8b5cf6',
     },
     {
         number: '03',
         title: 'Bioinformatics Research',
         desc: 'Hands-on experience with Biopython, FASTA, and BLAST for biological sequence analysis, bridging the gap between biology and computation.',
-        color: '#10b981',
+        color: '#3b82f6',
     },
 ]
 
@@ -66,16 +66,16 @@ export default function About() {
     return (
         <section id="about" className="py-28 relative overflow-hidden">
             {/* Left ambient glow */}
-            <div className="absolute -left-40 top-1/2 w-80 h-80 rounded-full bg-emerald-500/5 blur-3xl" />
+            <div className="absolute -left-40 top-1/2 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeIn>
                     <div className="flex items-center gap-4 mb-16">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-emerald-500/20" />
-                        <span className="text-xs text-emerald-500 font-mono tracking-widest uppercase">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-blue-500/20" />
+                        <span className="text-xs text-blue-500 font-mono tracking-widest uppercase">
                             001 / About
                         </span>
-                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-emerald-500/20" />
+                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-blue-500/20" />
                     </div>
                 </FadeIn>
 
@@ -87,7 +87,7 @@ export default function About() {
                                 Where Biology Meets{' '}
                                 <span
                                     style={{
-                                        background: 'linear-gradient(135deg, #10b981, #06b6d4)',
+                                        background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
                                         WebkitBackgroundClip: 'text',
                                         WebkitTextFillColor: 'transparent',
                                     }}
@@ -99,17 +99,17 @@ export default function About() {
 
                         <FadeIn delay={0.2}>
                             <p className="text-slate-400 leading-relaxed mb-6 text-[15px]">
-                                I'm a <strong className="text-emerald-400 font-semibold">Junior AI Engineer and Data Analyst</strong> with a
+                                I'm a <strong className="text-blue-400 font-semibold">Junior AI Engineer and Data Analyst</strong> with a
                                 specialized focus on Medical AI and Bioinformatics. As a recent graduate from{' '}
                                 <strong className="text-white">Delta University for Science and Technology</strong>, I hold a Bachelor's
-                                Degree in <strong className="text-cyan-400">Artificial Intelligence &amp; Bioinformatics</strong>.
+                                Degree in <strong className="text-violet-400">Artificial Intelligence &amp; Bioinformatics</strong>.
                             </p>
                         </FadeIn>
 
                         <FadeIn delay={0.25}>
                             <p className="text-slate-400 leading-relaxed mb-6 text-[15px]">
-                                My mission is fueled by a passion for <strong className="text-emerald-400">medical imaging</strong>,
-                                disease diagnosis, and <strong className="text-emerald-400">healthcare AI applications</strong>. I believe that
+                                My mission is fueled by a passion for <strong className="text-blue-400">medical imaging</strong>,
+                                disease diagnosis, and <strong className="text-blue-400">healthcare AI applications</strong>. I believe that
                                 data holds the key to transforming patient outcomes — and I'm dedicated to building the models that unlock
                                 those actionable insights.
                             </p>
@@ -117,7 +117,7 @@ export default function About() {
 
                         <FadeIn delay={0.3}>
                             <p className="text-slate-400 leading-relaxed mb-8 text-[15px]">
-                                With expertise in <strong className="text-cyan-400">end-to-end machine learning pipelines</strong> and
+                                With expertise in <strong className="text-violet-400">end-to-end machine learning pipelines</strong> and
                                 preprocessing complex biological and medical datasets, I bridge the gap between raw biological signals
                                 and intelligent clinical decision-support systems.
                             </p>
@@ -176,9 +176,9 @@ export default function About() {
 
                         {/* Education card */}
                         <FadeIn delay={0.5} direction="left">
-                            <div className="glass-card-cyan rounded-2xl p-5 flex items-start gap-4">
+                            <div className="glass-card-violet rounded-2xl p-5 flex items-start gap-4">
                                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                                    style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}>
+                                    style={{ background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' }}>
                                     <span className="text-[#050505] font-bold text-xs">BSc</span>
                                 </div>
                                 <div>
