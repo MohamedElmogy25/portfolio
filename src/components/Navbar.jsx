@@ -1,23 +1,40 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { FiMenu, FiX, FiDownload } from 'react-icons/fi'
 
 const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#about', label: 'About', id: 'about' },
+    { href: '#skills', label: 'Skills', id: 'skills' },
+    { href: '#experience', label: 'Experience', id: 'experience' },
+    { href: '#projects', label: 'Projects', id: 'projects' },
+    { href: '#contact', label: 'Contact', id: 'contact' },
 ]
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
+    const [activeId, setActiveId] = useState('')
 
+    // Scroll state + active section via IntersectionObserver
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 40)
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
+        const onScroll = () => setScrolled(window.scrollY > 40)
+        window.addEventListener('scroll', onScroll)
+
+        const observers = navLinks.map(({ id }) => {
+            const el = document.getElementById(id)
+            if (!el) return null
+            const obs = new IntersectionObserver(
+                ([entry]) => { if (entry.isIntersecting) setActiveId(id) },
+                { rootMargin: '-40% 0px -55% 0px' }
+            )
+            obs.observe(el)
+            return obs
+        }).filter(Boolean)
+
+        return () => {
+            window.removeEventListener('scroll', onScroll)
+            observers.forEach(obs => obs.disconnect())
+        }
     }, [])
 
     return (
@@ -25,54 +42,75 @@ export default function Navbar() {
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? 'bg-[#050505]/90 backdrop-blur-xl border-b border-emerald-500/10'
-                    : 'bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#050505]/90 backdrop-blur-xl border-b border-emerald-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
+
                     {/* Logo */}
-                    <motion.a
-                        href="#"
-                        whileHover={{ scale: 1.05 }}
-                        className="flex items-center gap-2"
-                    >
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+                    <motion.a href="#" whileHover={{ scale: 1.05 }} className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center relative overflow-hidden"
                             style={{ background: 'linear-gradient(135deg, #10b981, #06b6d4)' }}>
-                            <span className="text-[#050505] font-bold text-sm font-mono">M</span>
+                            <span className="text-[#050505] font-bold text-sm font-mono relative z-10">M</span>
                         </div>
                         <span className="font-bold text-white text-base tracking-tight hidden sm:block">
-                            Mohamed<span className="text-emerald-400 ml-1">Elmogy</span>
+                            Mohamed<span className="gradient-text-animated ml-1">Elmogy</span>
                         </span>
                     </motion.a>
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-1">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className="px-4 py-2 rounded-lg text-sm text-slate-400 hover:text-emerald-400 hover:bg-emerald-500/5 transition-all duration-200 font-medium"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                        {navLinks.map((link) => {
+                            const isActive = activeId === link.id
+                            return (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className="relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                                    style={{ color: isActive ? '#10b981' : '#94a3b8' }}
+                                >
+                                    {isActive && (
+                                        <motion.span
+                                            layoutId="nav-pill"
+                                            className="absolute inset-0 rounded-lg"
+                                            style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}
+                                            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{link.label}</span>
+                                </a>
+                            )
+                        })}
                     </div>
 
-                    {/* CTA + Mobile Menu */}
+                    {/* CTA + Mobile toggle */}
                     <div className="flex items-center gap-3">
-                        <a
-                            href="#contact"
-                            className="hidden md:inline-flex btn-primary text-xs py-2 px-4"
+                        <motion.a
+                            href="/CV.pdf"
+                            download="Mohamed_Elmogy_CV.pdf"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="hidden md:inline-flex items-center gap-1.5 btn-primary text-xs py-2 px-4"
                         >
-                            Hire Me
-                        </a>
+                            <FiDownload size={12} />
+                            Resume
+                        </motion.a>
                         <button
                             onClick={() => setMenuOpen(!menuOpen)}
                             className="md:hidden p-2 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all"
                         >
-                            {menuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={menuOpen ? 'close' : 'open'}
+                                    initial={{ rotate: -90, opacity: 0 }}
+                                    animate={{ rotate: 0, opacity: 1 }}
+                                    exit={{ rotate: 90, opacity: 0 }}
+                                    transition={{ duration: 0.15 }}
+                                >
+                                    {menuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+                                </motion.div>
+                            </AnimatePresence>
                         </button>
                     </div>
                 </div>
@@ -82,25 +120,37 @@ export default function Navbar() {
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-t border-emerald-500/10 bg-[#050505]/95 backdrop-blur-xl"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="md:hidden border-t border-emerald-500/10 bg-[#050505]/98 backdrop-blur-xl"
                     >
                         <div className="px-4 py-4 flex flex-col gap-1">
-                            {navLinks.map((link) => (
-                                <a
+                            {navLinks.map((link, i) => (
+                                <motion.a
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMenuOpen(false)}
-                                    className="px-4 py-3 rounded-lg text-sm text-slate-400 hover:text-emerald-400 hover:bg-emerald-500/5 transition-all font-medium"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.05 }}
+                                    className="px-4 py-3 rounded-lg text-sm font-medium transition-all"
+                                    style={{ color: activeId === link.id ? '#10b981' : '#94a3b8' }}
                                 >
                                     {link.label}
-                                </a>
+                                </motion.a>
                             ))}
-                            <a href="#contact" className="btn-primary mt-2 text-center text-sm">
-                                Hire Me
-                            </a>
+                            <motion.a
+                                href="/CV.pdf"
+                                download="Mohamed_Elmogy_CV.pdf"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.3 }}
+                                className="btn-primary mt-2 text-center text-sm flex items-center justify-center gap-2"
+                            >
+                                <FiDownload size={13} /> Download Resume
+                            </motion.a>
                         </div>
                     </motion.div>
                 )}
