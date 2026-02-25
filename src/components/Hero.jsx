@@ -191,47 +191,55 @@ export default function Hero() {
                         </motion.div>
                     </div>
 
-                    {/* Right: Terminal + counters */}
+                    {/* Right: Photo + counters */}
                     <motion.div
                         initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="hidden lg:block"
+                        className="hidden lg:flex flex-col items-center gap-6"
                     >
-                        <div className="rounded-2xl overflow-hidden border"
-                            style={{ background: 'rgba(5,10,5,0.95)', borderColor: 'rgba(var(--primary-rgb),0.15)' }}>
-                            <div className="flex items-center gap-2 px-4 py-3 border-b"
-                                style={{ background: 'rgba(var(--primary-rgb),0.04)', borderColor: 'rgba(var(--primary-rgb),0.1)' }}>
-                                <div className="flex gap-1.5">
-                                    {['bg-red-500/70', 'bg-yellow-500/70', 'bg-green-500/70'].map(c => (
-                                        <div key={c} className={`w-3 h-3 rounded-full ${c}`} />
-                                    ))}
-                                </div>
-                                <span className="text-slate-500 text-xs font-mono ml-2">diagnolink_demo.py</span>
-                                <div className="ml-auto flex items-center gap-1">
-                                    <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'var(--primary)' }} />
-                                    <span className="text-[10px] font-mono" style={{ color: 'var(--primary)' }}>running</span>
-                                </div>
-                            </div>
-                            <div className="p-6 font-mono text-sm space-y-2">
-                                {codeLines.map((line, i) => (
-                                    <motion.div key={i}
-                                        initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.8 + i * 0.25, duration: 0.4 }}
-                                        style={{ color: i === codeLines.length - 1 ? 'var(--primary)' : line.startsWith('>>>') ? '#e2e8f0' : 'var(--secondary)' }}
-                                    >
-                                        {line}
-                                    </motion.div>
-                                ))}
-                                <motion.div
-                                    initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 0] }}
-                                    transition={{ delay: 2.2, duration: 1, repeat: Infinity }}
-                                    className="inline-block w-2 h-4" style={{ background: 'var(--primary)' }}
+                        {/* Photo frame */}
+                        <div className="relative flex items-center justify-center">
+                            {/* Rotating conic ring */}
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                                className="absolute rounded-full"
+                                style={{
+                                    width: '288px', height: '288px',
+                                    background: 'conic-gradient(from 0deg, var(--primary), var(--secondary), transparent 60%, var(--primary))',
+                                    zIndex: 0,
+                                }}
+                            />
+                            {/* Glow */}
+                            <div className="absolute rounded-full blur-3xl opacity-30"
+                                style={{ width: '320px', height: '320px', background: 'radial-gradient(circle, var(--primary), var(--secondary))' }} />
+                            {/* White separator ring */}
+                            <div className="absolute rounded-full z-10"
+                                style={{ width: '276px', height: '276px', background: 'var(--bg)' }} />
+                            {/* Photo */}
+                            <div className="relative z-20 w-64 h-64 rounded-full overflow-hidden"
+                                style={{ boxShadow: '0 0 40px rgba(var(--primary-rgb),0.2)' }}>
+                                <img
+                                    src="/me.jpg"
+                                    alt="Mohamed Elmogy"
+                                    className="w-full h-full object-cover"
+                                    style={{ objectPosition: 'center top' }}
                                 />
                             </div>
+                            {/* Status badge */}
+                            <motion.div
+                                initial={{ scale: 0 }} animate={{ scale: 1 }}
+                                transition={{ delay: 1.2, type: 'spring', stiffness: 300 }}
+                                className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-1.5 rounded-full border z-30"
+                                style={{ background: 'var(--bg-card)', borderColor: 'rgba(var(--primary-rgb),0.35)', backdropFilter: 'blur(12px)', whiteSpace: 'nowrap' }}
+                            >
+                                <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--primary)' }} />
+                                <span className="text-xs font-semibold" style={{ color: 'var(--primary)' }}>AI Engineer</span>
+                            </motion.div>
                         </div>
 
                         {/* Stat counters */}
-                        <div className="grid grid-cols-3 gap-3 mt-4">
+                        <div className="grid grid-cols-3 gap-3 w-full mt-6">
                             {[
                                 { target: 94.2, suffix: '%', labelIdx: 0 },
                                 { target: 3, suffix: '+', labelIdx: 1 },
@@ -251,6 +259,7 @@ export default function Hero() {
                             ))}
                         </div>
                     </motion.div>
+
                 </div>
             </div>
 
@@ -266,6 +275,6 @@ export default function Hero() {
                     style={{ background: `linear-gradient(to bottom, var(--primary), transparent)` }}
                 />
             </motion.div>
-        </section>
+        </section >
     )
 }
