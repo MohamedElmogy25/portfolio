@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
+import { AppProvider } from './context/AppContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -31,19 +32,21 @@ function CursorGlow() {
 
 function App() {
     return (
-        <div className="min-h-screen bg-[#30364f] bio-mesh">
-            <ScrollProgress />
-            <CursorGlow />
-            <Navbar />
-            <main>
-                <Hero />
-                <About />
-                <Skills />
-                <Timeline />
-                <Projects />
-                <Contact />
-            </main>
-        </div>
+        <AppProvider>
+            <div className="min-h-screen bio-mesh" style={{ backgroundColor: 'var(--bg)' }}>
+                <ScrollProgress />
+                <CursorGlow />
+                <Navbar />
+                <main>
+                    <Hero />
+                    <About />
+                    <Skills />
+                    <Timeline />
+                    <Projects />
+                    <Contact />
+                </main>
+            </div>
+        </AppProvider>
     )
 }
 

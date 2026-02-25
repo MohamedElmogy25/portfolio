@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiDownload } from 'react-icons/fi'
-
-const navLinks = [
-    { href: '#about', label: 'About', id: 'about' },
-    { href: '#skills', label: 'Skills', id: 'skills' },
-    { href: '#experience', label: 'Experience', id: 'experience' },
-    { href: '#projects', label: 'Projects', id: 'projects' },
-    { href: '#contact', label: 'Contact', id: 'contact' },
-]
+import { FiMenu, FiX, FiDownload, FiSun, FiMoon } from 'react-icons/fi'
+import { useApp } from '../context/AppContext'
+import { translations } from '../translations'
 
 export default function Navbar() {
+    const { lang, theme, toggleLang, toggleTheme } = useApp()
+    const t = translations[lang].nav
     const [scrolled, setScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const [activeId, setActiveId] = useState('')
 
-    // Scroll state + active section via IntersectionObserver
+    const navLinks = [
+        { href: '#about', label: t.about, id: 'about' },
+        { href: '#skills', label: t.skills, id: 'skills' },
+        { href: '#experience', label: t.experience, id: 'experience' },
+        { href: '#projects', label: t.projects, id: 'projects' },
+        { href: '#contact', label: t.contact, id: 'contact' },
+    ]
+
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 40)
         window.addEventListener('scroll', onScroll)
@@ -35,26 +38,36 @@ export default function Navbar() {
             window.removeEventListener('scroll', onScroll)
             observers.forEach(obs => obs.disconnect())
         }
-    }, [])
+    }, [lang])
+
+    const isLight = theme === 'light'
 
     return (
         <motion.nav
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#30364f]/90 backdrop-blur-xl border-b border-blue-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+                    ? 'backdrop-blur-xl border-b'
+                    : 'bg-transparent'
                 }`}
+            style={scrolled ? {
+                backgroundColor: isLight ? 'rgba(240,249,255,0.9)' : 'rgba(5,5,5,0.9)',
+                borderColor: 'rgba(var(--primary-rgb),0.1)',
+                boxShadow: '0 4px 30px rgba(0,0,0,0.1)',
+            } : {}}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
 
                     {/* Logo */}
                     <motion.a href="#" whileHover={{ scale: 1.05 }} className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center relative overflow-hidden"
-                            style={{ background: 'linear-gradient(135deg, #acbac4, #e1d9bc)' }}>
-                            <span className="text-[#30364f] font-bold text-sm font-mono relative z-10">M</span>
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+                            style={{ background: 'linear-gradient(135deg, var(--primary), var(--secondary))' }}>
+                            <span className="text-white font-bold text-sm font-mono">M</span>
                         </div>
-                        <span className="font-bold text-white text-base tracking-tight hidden sm:block">
+                        <span className="font-bold text-base tracking-tight hidden sm:block"
+                            style={{ color: 'var(--text)' }}>
                             Mohamed<span className="gradient-text-animated ml-1">Elmogy</span>
                         </span>
                     </motion.a>
@@ -64,17 +77,14 @@ export default function Navbar() {
                         {navLinks.map((link) => {
                             const isActive = activeId === link.id
                             return (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
+                                <a key={link.href} href={link.href}
                                     className="relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-                                    style={{ color: isActive ? '#acbac4' : '#94a3b8' }}
+                                    style={{ color: isActive ? 'var(--primary)' : 'var(--text-muted)' }}
                                 >
                                     {isActive && (
-                                        <motion.span
-                                            layoutId="nav-pill"
+                                        <motion.span layoutId="nav-pill"
                                             className="absolute inset-0 rounded-lg"
-                                            style={{ background: 'rgba(172,186,196,0.08)', border: '1px solid rgba(172,186,196,0.2)' }}
+                                            style={{ background: 'rgba(var(--primary-rgb),0.08)', border: '1px solid rgba(var(--primary-rgb),0.2)' }}
                                             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                                         />
                                     )}
@@ -84,21 +94,55 @@ export default function Navbar() {
                         })}
                     </div>
 
-                    {/* CTA + Mobile toggle */}
-                    <div className="flex items-center gap-3">
-                        <motion.a
-                            href="/CV.pdf"
-                            download="Mohamed_Elmogy_CV.pdf"
+                    {/* Controls */}
+                    <div className="flex items-center gap-2">
+                        {/* Theme toggle */}
+                        <motion.button
+                            onClick={toggleTheme}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="p-2 rounded-lg transition-all duration-200"
+                            style={{
+                                color: 'var(--text-muted)',
+                                border: '1px solid rgba(var(--primary-rgb),0.2)',
+                                background: 'rgba(var(--primary-rgb),0.05)',
+                            }}
+                            title={isLight ? 'Switch to dark' : 'Switch to light'}
+                        >
+                            {isLight ? <FiMoon size={15} /> : <FiSun size={15} />}
+                        </motion.button>
+
+                        {/* Language toggle */}
+                        <motion.button
+                            onClick={toggleLang}
                             whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200"
+                            style={{
+                                color: 'var(--primary)',
+                                border: '1px solid rgba(var(--primary-rgb),0.3)',
+                                background: 'rgba(var(--primary-rgb),0.06)',
+                                fontFamily: lang === 'en' ? 'Cairo, sans-serif' : 'Inter, sans-serif',
+                            }}
+                        >
+                            {lang === 'en' ? 'ع' : 'EN'}
+                        </motion.button>
+
+                        {/* Resume */}
+                        <motion.a
+                            href="/CV.pdf" download="Mohamed_Elmogy_CV.pdf"
+                            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                             className="hidden md:inline-flex items-center gap-1.5 btn-primary text-xs py-2 px-4"
                         >
                             <FiDownload size={12} />
-                            Resume
+                            {t.resume}
                         </motion.a>
+
+                        {/* Mobile menu button */}
                         <button
                             onClick={() => setMenuOpen(!menuOpen)}
-                            className="md:hidden p-2 rounded-lg text-slate-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"
+                            className="md:hidden p-2 rounded-lg transition-all"
+                            style={{ color: 'var(--text-muted)' }}
                         >
                             <AnimatePresence mode="wait">
                                 <motion.div
@@ -124,33 +168,40 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="md:hidden border-t border-blue-500/10 bg-[#30364f]/98 backdrop-blur-xl"
+                        className="md:hidden border-t backdrop-blur-xl"
+                        style={{
+                            backgroundColor: isLight ? 'rgba(240,249,255,0.98)' : 'rgba(5,5,5,0.98)',
+                            borderColor: 'rgba(var(--primary-rgb),0.1)',
+                        }}
                     >
                         <div className="px-4 py-4 flex flex-col gap-1">
                             {navLinks.map((link, i) => (
-                                <motion.a
-                                    key={link.href}
-                                    href={link.href}
+                                <motion.a key={link.href} href={link.href}
                                     onClick={() => setMenuOpen(false)}
-                                    initial={{ opacity: 0, x: -20 }}
+                                    initial={{ opacity: 0, x: lang === 'ar' ? 20 : -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: i * 0.05 }}
                                     className="px-4 py-3 rounded-lg text-sm font-medium transition-all"
-                                    style={{ color: activeId === link.id ? '#acbac4' : '#94a3b8' }}
+                                    style={{ color: activeId === link.id ? 'var(--primary)' : 'var(--text-muted)' }}
                                 >
                                     {link.label}
                                 </motion.a>
                             ))}
-                            <motion.a
-                                href="/CV.pdf"
-                                download="Mohamed_Elmogy_CV.pdf"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.3 }}
-                                className="btn-primary mt-2 text-center text-sm flex items-center justify-center gap-2"
-                            >
-                                <FiDownload size={13} /> Download Resume
-                            </motion.a>
+                            <div className="flex gap-2 mt-2">
+                                <button onClick={toggleLang}
+                                    className="flex-1 py-2 rounded-lg text-sm font-bold transition-all"
+                                    style={{
+                                        color: 'var(--primary)',
+                                        border: '1px solid rgba(var(--primary-rgb),0.3)',
+                                        fontFamily: lang === 'en' ? 'Cairo' : 'Inter',
+                                    }}>
+                                    {lang === 'en' ? 'العربية' : 'English'}
+                                </button>
+                                <motion.a href="/CV.pdf" download="Mohamed_Elmogy_CV.pdf"
+                                    className="flex-1 btn-primary text-center text-sm flex items-center justify-center gap-2">
+                                    <FiDownload size={13} /> {t.resume}
+                                </motion.a>
+                            </div>
                         </div>
                     </motion.div>
                 )}

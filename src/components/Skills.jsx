@@ -13,7 +13,7 @@ const skillCategories = [
         label: 'AI / ML',
         gradient: 'from-blue-500/20 to-blue-500/5',
         border: 'border-blue-500/20',
-        accentColor: '#acbac4',
+        accentColor: '#38bdf8',
         icon: '🧠',
         skills: [
             { name: 'TensorFlow', icon: SiTensorflow, level: 90, color: '#FF6F00' },
@@ -27,7 +27,7 @@ const skillCategories = [
         label: 'Data',
         gradient: 'from-violet-500/20 to-violet-500/5',
         border: 'border-violet-500/20',
-        accentColor: '#e1d9bc',
+        accentColor: '#e879f9',
         icon: '📊',
         skills: [
             { name: 'SQL', icon: SiMysql, level: 85, color: '#4479A1' },
@@ -41,13 +41,13 @@ const skillCategories = [
         label: 'Bioinformatics',
         gradient: 'from-blue-500/15 to-violet-500/10',
         border: 'border-blue-500/15',
-        accentColor: '#acbac4',
+        accentColor: '#38bdf8',
         icon: '🧬',
         skills: [
-            { name: 'Biopython', icon: FiDatabase, level: 82, color: '#acbac4' },
-            { name: 'BLAST', icon: FiDatabase, level: 78, color: '#e1d9bc' },
-            { name: 'FASTA', icon: FiDatabase, level: 80, color: '#acbac4' },
-            { name: 'OpenCV', icon: FiDatabase, level: 85, color: '#e1d9bc' },
+            { name: 'Biopython', icon: FiDatabase, level: 82, color: '#38bdf8' },
+            { name: 'BLAST', icon: FiDatabase, level: 78, color: '#e879f9' },
+            { name: 'FASTA', icon: FiDatabase, level: 80, color: '#38bdf8' },
+            { name: 'OpenCV', icon: FiDatabase, level: 85, color: '#e879f9' },
         ],
     },
 ]
@@ -159,7 +159,7 @@ export default function Skills() {
                 {/* Soft Skills */}
                 <FadeIn delay={0.4}>
                     <div className="mt-6 rounded-2xl p-6 border border-violet-500/12"
-                        style={{ background: 'rgba(225,217,188,0.04)' }}>
+                        style={{ background: 'rgba(232,121,249,0.04)' }}>
                         <p className="text-xs text-violet-500 font-mono mb-4 tracking-widest uppercase">Soft Skills</p>
                         <div className="flex flex-wrap gap-2">
                             {[

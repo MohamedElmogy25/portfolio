@@ -4,10 +4,10 @@ import { useRef } from 'react'
 import { FiZap, FiHeart, FiDatabase, FiCode } from 'react-icons/fi'
 
 const traits = [
-    { icon: FiHeart, label: 'Medical AI Passion', color: '#acbac4' },
-    { icon: FiDatabase, label: 'Data Analyst', color: '#e1d9bc' },
-    { icon: FiCode, label: 'ML Engineer', color: '#acbac4' },
-    { icon: FiZap, label: 'Bioinformatics', color: '#e1d9bc' },
+    { icon: FiHeart, label: 'Medical AI Passion', color: '#38bdf8' },
+    { icon: FiDatabase, label: 'Data Analyst', color: '#e879f9' },
+    { icon: FiCode, label: 'ML Engineer', color: '#38bdf8' },
+    { icon: FiZap, label: 'Bioinformatics', color: '#e879f9' },
 ]
 
 const highlights = [
@@ -15,19 +15,19 @@ const highlights = [
         number: '01',
         title: 'AI-Powered Diagnosis',
         desc: 'Built DiagnoLink, a TensorFlow-based system achieving 94%+ accuracy on chest X-ray disease detection using the NIH ChestX-ray14 dataset.',
-        color: '#acbac4',
+        color: '#38bdf8',
     },
     {
         number: '02',
         title: 'Google Data Analytics',
         desc: 'Completed the Google Data Analysis Specialization through the Digital Egypt Pioneers Initiative (DEPI), mastering end-to-end analytics workflows.',
-        color: '#e1d9bc',
+        color: '#e879f9',
     },
     {
         number: '03',
         title: 'Bioinformatics Research',
         desc: 'Hands-on experience with Biopython, FASTA, and BLAST for biological sequence analysis, bridging the gap between biology and computation.',
-        color: '#acbac4',
+        color: '#38bdf8',
     },
 ]
 
@@ -87,7 +87,7 @@ export default function About() {
                                 Where Biology Meets{' '}
                                 <span
                                     style={{
-                                        background: 'linear-gradient(135deg, #acbac4, #e1d9bc)',
+                                        background: 'linear-gradient(135deg, #38bdf8, #e879f9)',
                                         WebkitBackgroundClip: 'text',
                                         WebkitTextFillColor: 'transparent',
                                     }}
@@ -178,8 +178,8 @@ export default function About() {
                         <FadeIn delay={0.5} direction="left">
                             <div className="glass-card-violet rounded-2xl p-5 flex items-start gap-4">
                                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                                    style={{ background: 'linear-gradient(135deg, #acbac4, #e1d9bc)' }}>
-                                    <span className="text-[#30364f] font-bold text-xs">BSc</span>
+                                    style={{ background: 'linear-gradient(135deg, #38bdf8, #e879f9)' }}>
+                                    <span className="text-[#050505] font-bold text-xs">BSc</span>
                                 </div>
                                 <div>
                                     <div className="text-white font-semibold text-sm">

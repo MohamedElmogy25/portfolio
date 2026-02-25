@@ -23,8 +23,8 @@ const projects = [
         ],
         techDetail: ['CNN Architecture', 'Transfer Learning', 'Image Preprocessing', 'Data Augmentation'],
         github: 'https://github.com/MohamedElmogy25',
-        accent: '#acbac4',
-        glowColor: 'rgba(172,186,196,0.15)',
+        accent: '#38bdf8',
+        glowColor: 'rgba(56,189,248,0.15)',
     },
     {
         id: 'supermarket',
@@ -40,8 +40,8 @@ const projects = [
         ],
         techDetail: ['Data Wrangling', 'EDA', 'Dashboard Design', 'Business Intelligence'],
         github: 'https://github.com/MohamedElmogy25',
-        accent: '#e1d9bc',
-        glowColor: 'rgba(225,217,188,0.15)',
+        accent: '#e879f9',
+        glowColor: 'rgba(232,121,249,0.15)',
     },
 ]
 
@@ -82,26 +82,26 @@ export default function Projects() {
                         transition={{ duration: 0.7 }}
                         className="lg:col-span-2 rounded-2xl overflow-hidden border relative group"
                         style={{
-                            borderColor: 'rgba(172,186,196,0.2)',
-                            background: 'rgba(48,54,79,0.95)',
+                            borderColor: 'rgba(56,189,248,0.2)',
+                            background: 'rgba(5,5,5,0.95)',
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(172,186,196,0.4)'
-                            e.currentTarget.style.boxShadow = '0 0 40px rgba(172,186,196,0.12)'
+                            e.currentTarget.style.borderColor = 'rgba(56,189,248,0.4)'
+                            e.currentTarget.style.boxShadow = '0 0 40px rgba(56,189,248,0.12)'
                         }}
                         onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(172,186,196,0.2)'
+                            e.currentTarget.style.borderColor = 'rgba(56,189,248,0.2)'
                             e.currentTarget.style.boxShadow = ''
                         }}
                     >
                         {/* Top accent bar */}
                         <div className="h-1 w-full"
-                            style={{ background: 'linear-gradient(90deg, #acbac4, #e1d9bc)' }} />
+                            style={{ background: 'linear-gradient(90deg, #38bdf8, #e879f9)' }} />
 
                         {/* Featured badge */}
                         <div className="absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
-                            style={{ background: 'rgba(172,186,196,0.12)', color: '#acbac4', border: '1px solid rgba(172,186,196,0.25)' }}>
-                            <FiStar size={10} fill="#acbac4" />
+                            style={{ background: 'rgba(56,189,248,0.12)', color: '#38bdf8', border: '1px solid rgba(56,189,248,0.25)' }}>
+                            <FiStar size={10} fill="#38bdf8" />
                             Featured Project
                         </div>
 
@@ -109,7 +109,7 @@ export default function Projects() {
                             {/* Project header */}
                             <div className="flex items-start gap-4 mb-5">
                                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shrink-0"
-                                    style={{ background: 'rgba(172,186,196,0.1)', border: '1px solid rgba(172,186,196,0.2)' }}>
+                                    style={{ background: 'rgba(56,189,248,0.1)', border: '1px solid rgba(56,189,248,0.2)' }}>
                                     🫁
                                 </div>
                                 <div>
@@ -133,7 +133,7 @@ export default function Projects() {
                                 ].map((m) => (
                                     <div key={m.label}
                                         className="rounded-xl p-3 text-center"
-                                        style={{ background: 'rgba(172,186,196,0.06)', border: '1px solid rgba(172,186,196,0.1)' }}>
+                                        style={{ background: 'rgba(56,189,248,0.06)', border: '1px solid rgba(56,189,248,0.1)' }}>
                                         <div className="text-lg mb-1">{m.icon}</div>
                                         <div className="text-blue-400 font-bold text-base">{m.value}</div>
                                         <div className="text-slate-600 text-xs mt-0.5">{m.label}</div>
@@ -146,7 +146,7 @@ export default function Projects() {
                                 {['TensorFlow', 'OpenCV', 'Python', 'CNN', 'Transfer Learning', 'NumPy', 'Matplotlib'].map((tag) => (
                                     <span key={tag}
                                         className="px-2.5 py-1 rounded-lg text-xs font-medium"
-                                        style={{ background: 'rgba(172,186,196,0.08)', color: '#86efac', border: '1px solid rgba(172,186,196,0.12)' }}>
+                                        style={{ background: 'rgba(56,189,248,0.08)', color: '#86efac', border: '1px solid rgba(56,189,248,0.12)' }}>
                                         {tag}
                                     </span>
                                 ))}
@@ -154,7 +154,7 @@ export default function Projects() {
 
                             {/* Pipeline */}
                             <div className="rounded-xl p-4 font-mono text-xs mb-6"
-                                style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(172,186,196,0.08)' }}>
+                                style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(56,189,248,0.08)' }}>
                                 <div className="text-slate-600 mb-2"># Model Pipeline</div>
                                 <div className="text-slate-400">Input X-Ray &nbsp;<span className="text-blue-500">→</span>&nbsp; Preprocessing &nbsp;<span className="text-blue-500">→</span>&nbsp; CNN</div>
                                 <div className="text-slate-400 mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-violet-500">→</span>&nbsp; Multi-label Classification</div>
@@ -184,24 +184,24 @@ export default function Projects() {
                         transition={{ duration: 0.7, delay: 0.15 }}
                         className="rounded-2xl overflow-hidden border relative group flex flex-col"
                         style={{
-                            borderColor: 'rgba(225,217,188,0.15)',
-                            background: 'rgba(48,54,79,0.95)',
+                            borderColor: 'rgba(232,121,249,0.15)',
+                            background: 'rgba(5,5,5,0.95)',
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(225,217,188,0.35)'
-                            e.currentTarget.style.boxShadow = '0 0 30px rgba(225,217,188,0.10)'
+                            e.currentTarget.style.borderColor = 'rgba(232,121,249,0.35)'
+                            e.currentTarget.style.boxShadow = '0 0 30px rgba(232,121,249,0.10)'
                         }}
                         onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(225,217,188,0.15)'
+                            e.currentTarget.style.borderColor = 'rgba(232,121,249,0.15)'
                             e.currentTarget.style.boxShadow = ''
                         }}
                     >
                         <div className="h-1 w-full"
-                            style={{ background: 'linear-gradient(90deg, #e1d9bc, #acbac4)' }} />
+                            style={{ background: 'linear-gradient(90deg, #e879f9, #38bdf8)' }} />
 
                         <div className="p-6 flex flex-col flex-1">
                             <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-4 shrink-0"
-                                style={{ background: 'rgba(225,217,188,0.1)', border: '1px solid rgba(225,217,188,0.2)' }}>
+                                style={{ background: 'rgba(232,121,249,0.1)', border: '1px solid rgba(232,121,249,0.2)' }}>
                                 📈
                             </div>
 
@@ -227,7 +227,7 @@ export default function Projects() {
                                 {['Python', 'Pandas', 'Power BI', 'SQL', 'Tableau'].map((t) => (
                                     <span key={t}
                                         className="px-2 py-0.5 rounded-md text-xs"
-                                        style={{ background: 'rgba(225,217,188,0.08)', color: '#67e8f9', border: '1px solid rgba(225,217,188,0.1)' }}>
+                                        style={{ background: 'rgba(232,121,249,0.08)', color: '#67e8f9', border: '1px solid rgba(232,121,249,0.1)' }}>
                                         {t}
                                     </span>
                                 ))}
@@ -243,9 +243,9 @@ export default function Projects() {
 
                     {/* Small stat cards row */}
                     {[
-                        { label: 'Medical AI Focus', value: '100%', icon: '🩺', accent: '#acbac4', desc: 'Healthcare impact driven' },
-                        { label: 'Open Source', value: 'GitHub', icon: '⚙️', accent: '#e1d9bc', desc: 'All projects public' },
-                        { label: 'More Coming', value: '2025', icon: '🚀', accent: '#acbac4', desc: 'Actively building' },
+                        { label: 'Medical AI Focus', value: '100%', icon: '🩺', accent: '#38bdf8', desc: 'Healthcare impact driven' },
+                        { label: 'Open Source', value: 'GitHub', icon: '⚙️', accent: '#e879f9', desc: 'All projects public' },
+                        { label: 'More Coming', value: '2025', icon: '🚀', accent: '#38bdf8', desc: 'Actively building' },
                     ].map((card, i) => (
                         <motion.div
                             key={card.label}
