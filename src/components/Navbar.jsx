@@ -42,7 +42,7 @@ export default function Navbar() {
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#050505]/90 backdrop-blur-xl border-b border-blue-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#30364f]/90 backdrop-blur-xl border-b border-blue-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,8 +51,8 @@ export default function Navbar() {
                     {/* Logo */}
                     <motion.a href="#" whileHover={{ scale: 1.05 }} className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center relative overflow-hidden"
-                            style={{ background: 'linear-gradient(135deg, #38bdf8, #e879f9)' }}>
-                            <span className="text-[#050505] font-bold text-sm font-mono relative z-10">M</span>
+                            style={{ background: 'linear-gradient(135deg, #acbac4, #e1d9bc)' }}>
+                            <span className="text-[#30364f] font-bold text-sm font-mono relative z-10">M</span>
                         </div>
                         <span className="font-bold text-white text-base tracking-tight hidden sm:block">
                             Mohamed<span className="gradient-text-animated ml-1">Elmogy</span>
@@ -68,13 +68,13 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     className="relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-                                    style={{ color: isActive ? '#38bdf8' : '#94a3b8' }}
+                                    style={{ color: isActive ? '#acbac4' : '#94a3b8' }}
                                 >
                                     {isActive && (
                                         <motion.span
                                             layoutId="nav-pill"
                                             className="absolute inset-0 rounded-lg"
-                                            style={{ background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)' }}
+                                            style={{ background: 'rgba(172,186,196,0.08)', border: '1px solid rgba(172,186,196,0.2)' }}
                                             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                                         />
                                     )}
@@ -124,7 +124,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="md:hidden border-t border-blue-500/10 bg-[#050505]/98 backdrop-blur-xl"
+                        className="md:hidden border-t border-blue-500/10 bg-[#30364f]/98 backdrop-blur-xl"
                     >
                         <div className="px-4 py-4 flex flex-col gap-1">
                             {navLinks.map((link, i) => (
@@ -136,7 +136,7 @@ export default function Navbar() {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: i * 0.05 }}
                                     className="px-4 py-3 rounded-lg text-sm font-medium transition-all"
-                                    style={{ color: activeId === link.id ? '#38bdf8' : '#94a3b8' }}
+                                    style={{ color: activeId === link.id ? '#acbac4' : '#94a3b8' }}
                                 >
                                     {link.label}
                                 </motion.a>

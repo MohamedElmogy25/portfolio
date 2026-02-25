@@ -31,7 +31,7 @@ function CursorGlow() {
 
 function App() {
     return (
-        <div className="min-h-screen bg-[#050505] bio-mesh">
+        <div className="min-h-screen bg-[#30364f] bio-mesh">
             <ScrollProgress />
             <CursorGlow />
             <Navbar />
