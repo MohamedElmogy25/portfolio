@@ -1,5 +1,5 @@
 {
-    "name": "elmogy-portfolio-api",
+    "name": "elmogy_portfolio_api",
     "version": "1.0.0",
     "description": "Express API for contact form — Neon + Upstash",
     "type": "module",
